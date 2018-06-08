@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<style>
+			.page {
+				max-width: 1450px;
+				margin: auto;
+				padding: 30px;
+			}
+				.header img{
+					width: 760px;
+					height: auto;
+				}
+				.navbar {
+				margin:0px auto;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 23px;
+				display: flex;
+				justify-content: space-around;
+				padding:px;
+				align-items: stretch;
+				text-align:justify;
+
+			}
+			.navbar a {
+				float: left;
+				color: black;
+				letter-spacing: 1.5px; 
+				display: inline-block;
+			}
+			.navbar a:hover{
+				color:#606060;
+			}
+			.navbar .active a:hover{
+				background-color: transparent;
+			}
+			.dropdown-menu {
+				float: left;
+				border: white;
+				outline: white;				
+				color: gray;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 19px;
+				box-shadow: 0px 5px 16px 0px rgb(128,128,128);
+				right:100px;
+				text-decoration: none;
+				text-align: left;
+				width:195px;
+				padding: 7px;
+				margin:2px;
+				font-weight: 350;
+				line-height: 30px;
+			}
+			.dropdown-menu li a:hover {
+				background-color: #ffc6c3;
+			}
+
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 4px solid #eeeeee;
+			}
+				.images{
+					width: 535px;
+				}
+				.text{
+					font-size:18px;
+					color:black;
+					font-family:Times New Roman;
+				}
+				.h1text{
+					font-size:28px;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					margin:10px;
+					color:black;
+				}
+				.ptext{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:22px;
+				}
+				.footer-distributed{
+					width: auto;
+					background-color: #404040;
+					background-image: linear-gradient(rgb(255, 255, 255), rgb(64,64,64));
+					font-weight: lighter;
+					font-size:16px;
+				}
+				.footer-links{
+					text-shadow: 0 0 4px #ff9999;
+				}
+				.bordertext{
+					box-sizing: content-box;    
+					width: 90%;
+					height:80px;
+					padding: 10px; 					
+					border: 6px solid #ffcc66;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:20px;
+					text-align:center;
+				}
+				.videoWrapper {
+				  height:370px;
+				  width:650px;
+				  position:relative;
+				  overflow:hidden;
+				}
+
+				.videoWrapper iframe {
+					height:100%;
+					width:100%;
+					position:absolute;
+					top:0;
+					bottom:0;
+				}
+				
+		</style>
+		<script>
+			$(document).ready(function(){
+			  sizeTheVideo();
+			  $(window).resize(function(){
+				sizeTheVideo();
+			  });  
+			});
+
+			function sizeTheVideo(){
+			  // - 1.78 is the aspect ratio of the video
+			// - This will work if your video is 1920 x 1080
+			// - To find this value divide the video's native width by the height eg 1920/1080 = 1.78
+			  var aspectRatio =1.78;
+			  
+				var video = $('#videoWithJs iframe');
+				var videoHeight = video.outerHeight();
+				var newWidth = videoHeight*aspectRatio;
+					var halfNewWidth = newWidth/2;
+				
+			  //Define the new width and centrally align the iframe
+			  video.css({"width":newWidth+"px","left":"50%","margin-left":"-"+halfNewWidth+"px"});
+			}
+		</script>
+	</head>
+	<body>
+	<div class="page">
+		<div class = "header">
+			<center><img src="partytricks.jpeg"></center><br>
+		</div>
+		<hr>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="dropdown"><a class="dropdownbutton" data-toggle="dropdown" href="tricks.html" style="background-color:transparent;">TRICKS&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="pranks.html">PRANKS</a></li>
+				  <li><a href="magictricks.html">MAGIC TRICKS</a></li>
+				  <li><a href="partytricks.html">PARTY TRICKS</a></li>
+				</ul>
+			  </li>
+			  <li class="active"><a href="lifehacks.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFE HACKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="jokes.html">JOKES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="games.html">GAMES</a></li>
+			</ul>
+		  </div>
+		</nav>
+		<hr><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="h1text"><h1>T H E &nbsp;&nbsp;L E A K P R O O F&nbsp;&nbsp;B A G</h1></div><br><br>
+					<img src="pencil.jpg" class="images"><br>
+					
+				</div>
+				<div class="col-md-6"><br>
+					<div class="text">
+						<p>Polymer chains work together to prevent water from leaking out of a bag.
+						<br><br>
+						Who would have ever thought that a plastic bag, some water, and a few pencils would have adults screaming with fear? learn how to 
+						poke holes in a plastic bag filled with water without spilling a drop. Well, that’s the theory you’re going to test . . . and it’s wise 
+						to practice your liquid trick over the sink. It’s a cool way to learn about the chemistry of polymers.
+						</p>
+					</div><br>
+					<p class="ptext" style="color:#680000">Materials needed: Sharpened pencils, A zip-lock bag</p><br>
+					<p class="ptext">STEP ONE: Gather Pencils</p>
+					<div class="text">
+						<p>Start by sharpening the pencils. Make sure the tips are sharpened to a point.
+						</p>
+					</div><br>
+					<p class="ptext">STEP TWO: Fill the Zip-Lock Bag With Water</p>
+					<div class="text">
+						<p>Fill the bag one-half full with water and then seal the bag closed. Pose this question to your dinner guests: 
+						“What would happen if I tried to push one of these pencils through the bag of water? Would the water leak out and make a giant mess?”
+						</p>
+					</div>
+				</div>
+		</div><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="bordertext" style="font-size:21px">
+						<br><i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-star-half-full" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTERMEDIATE
+					</div><br>
+					<p class="ptext">STEP THREE: Add Water Into Your Empty Water Bottle</p>
+					<div class="text">
+						<p>They’ll answer “yes,” unless they know the scientific secret, but you’re not telling . . . yet!
+							<br><br><b>HELPFUL TIPS:</b><br>
+							Make sure the tips of the pencils are sharpened to a point. Be careful not to push the pencils all the way through the holes or your “spear-it” experiment 
+							will turn into a big “clean-it-up” activity.
+						</p>
+					</div><br>
+					<p class="ptext">STEP FOUR: Poke the Pencils Through the Bag</p>
+					<div class="text">
+						<p>Here comes the scary part. Hold the pencil in one hand and the top of the bag in the other hand. Believe it or not, you can push the pencil right through one side of the 
+						bag and halfway out the other side without spilling a drop. The long chains of molecules that make up the bag magically seal back around the pencil and prevent water from 
+						leaking out. Now, that’s the “Spear-It” of science! Sound impossible? Try it—over the sink the first time and then over your friend’s head . . . just for fun.
+						</p>
+					</div><br>
+					<p class="ptext">STEP FIVE: Enjoy It While It Lasts</p>
+					<div class="text">
+						<p>This is just like a Las Vegas–style magic act where the magician jabs swords through the cabinet, yet the beautiful assistant comes out unscathed. Okay, maybe not, but 
+						you have to agree that it’s amazing that the water stays in the bag. Be careful not to push the pencils all the way through the holes or your science magic trick will 
+						quickly turn into a “clean-it-up” activity.
+						</p>
+					</div><br>
+					<p class="ptext">STEP SIX: Clean Up Time!</p>
+					<div class="text">
+						<p>When you are finished, hold the bag over the sink or a bucket and remove the pencils. Toss the bag in the recycling bin and dry the pencils.
+						</p>
+					</div><br>
+					<p class="ptext">How Does It Work?</p>
+					<div class="text">
+						<p>The zipper-lock plastic bag you used was most likely made out of a polymer called low-density polyethylene (LDPE). It’s one of the most widely used packaging materials 
+						in the world. LDPE is low in cost, lightweight, durable, a barrier to moisture, and very flexible.
+						<br><br>Think of the polyethylene molecules as long strands of freshly cooked spaghetti. The tip of the sharpened pencil can easily slip between and push apart the flexible strands of 
+						spaghetti, but the strands’ flexible property helps to form a temporary seal against the edge of the pencil. When the pencil is removed, the hole in the plastic bag remains because the polyethylene molecules were pushed aside permanently and the water leaks out.
+						As you might have discovered, it’s much easier for the stretched plastic to seal around the smooth sides of a round pencil than the straight edges found on other pencils. 
+						Hopefully you discovered this tip during practice and not while the bag was precariously positioned over someone’s head.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div id="videoWithJs" class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/LdVN9GxJHCg?rel=0&amp;showinfo=0&amp;start=7&&end=47" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+						</iframe>
+					</div><br><br>
+					<p class="ptext">Take It Further</p>
+					<div class="text">
+						<p>Try experimenting with plastic bags of different sizes and thicknesses. The thicker the bag, the harder it is to get the pencil to pass through. 
+						For a really thin bag, use a plastic bag from the produce section of the grocery store. Experiment with different sizes and shapes of pencils. 
+						Some pencils have flat edges while others have perfectly round, smooth edges. Which type of pencil works best?
+						<br><br>This next gem is an extension of the “Baby Diaper Secret” activity. Collect the superabsorbent powder from the lining of two or three diapers. After all of the 
+						pencils are pushed through the bag, carefully open the bag and sprinkle in the superabsorbent powder. Give the powder a few seconds to solidify the water and 
+						remove the pencils.
+						<br><br>Use “The Leakproof Bag” as an object lesson for a message on school spirit and leadership.
+						Let the bag of water represent the student body and use the pencils to demonstrate the excitement of school spirit (spear-it!).
+						Each pencil represents a different element of school spirit—teamwork, pride, unity, attitude, dedication, and fun.
+						<br><br>As the pencils pass through the water, the student body helps to magnify the message of involvement and participation in school activities throughout the year. 
+						What happens when the spirit pencils are removed? Is it possible to stop the leaks? How do we keep the enthusiasm alive?
+						Collect the superabsorbent powder from the “Baby Diaper Secret” in a cup and label it “LEADERSHIP.” With just the proper amount of leadership, the student body is 
+						forever changed.
+						</p>
+					</div>
+				</div>
+		</div>
+	</div>
+		<footer class="footer-distributed">
+			<center><div class="footer-left">
+				<b><p style="color: #1a1a1a;">NAVIGATE </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="index.html">Home</a>&nbsp;	     <b>·</b>&nbsp;
+					<a href="pranks.html">Pranks</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="magictricks.html">Magic Tricks</a>	&nbsp;      <b>·</b>&nbsp;
+					<a href="partytricks.html">Party Tricks</a>	  &nbsp;   <b>·</b>&nbsp;
+					<a href="lifehacks.html">Life Hacks</a>	   &nbsp;  <b>·</b>&nbsp;
+					<a href="jokes.html">Jokes</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="games.html">Games</a>
+				</p>
+				<b><p style="color: #1a1a1a;">ABOUT </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="about.html">About Us</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="help.html">Help Center</a>  &nbsp; 	<b>·</b>&nbsp;
+					<a href="terms.html">Terms of Use</a>&nbsp;	 <b>·</b>&nbsp;
+					<a href="privacy.html">Privacy Policy</a>&nbsp;	  <b>·</b>&nbsp;
+					<a href="mailto:trisupport@houseoftricks.org">Contact Us</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/jli1598"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">JESSICA</p></b>
+					<a href="https://github.com/ijeon0839"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">INHYE</p></b>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/aallen7131"><i class="fa fa-github"></i></a><b><p style="color: #1a1a1a;"> ASHLEY</p></b>
+					<a href="mailto:trisupport@houseoftricks.org"><i class="fa fa-envelope-square" style="font-size:39px"></i></a><b><p style="color: #1a1a1a;">trisupport@houseoftricks.org</p></b>
+				</div>
+			</div>
+			<br><br><br>
+			<hr color="#909090" width="600" size="2" align="center"><br>
+			<center><p class="footer-company-name">House of Tricks &copy; 2018</p></center>
+		</center></footer>
+	</body>
+</html>

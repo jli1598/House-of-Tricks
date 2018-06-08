@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<style>
+			.page {
+				max-width: 1450px;
+				margin: auto;
+				padding: 30px;
+			}
+				.header img{
+					width: 760px;
+					height: auto;
+				}
+				.navbar {
+				margin:0px auto;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 23px;
+				display: flex;
+				justify-content: space-around;
+				padding:px;
+				align-items: stretch;
+				text-align:justify;
+
+			}
+			.navbar a {
+				float: left;
+				color: black;
+				letter-spacing: 1.5px; 
+				display: inline-block;
+			}
+			.navbar a:hover{
+				color:#606060;
+			}
+			.navbar .active a:hover{
+				background-color: transparent;
+			}
+			.dropdown-menu {
+				float: left;
+				border: white;
+				outline: white;				
+				color: gray;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 19px;
+				box-shadow: 0px 5px 16px 0px rgb(128,128,128);
+				right:100px;
+				text-decoration: none;
+				text-align: left;
+				width:195px;
+				padding: 7px;
+				margin:2px;
+				font-weight: 350;
+				line-height: 30px;
+			}
+			.dropdown-menu li a:hover {
+				background-color: #ffc6c3;
+			}
+
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 4px solid #eeeeee;
+			}
+				.images{
+					width: 535px;
+				}
+				.text{
+					font-size:18px;
+					color:black;
+					font-family:Times New Roman;
+				}
+				.h1text{
+					font-size:28px;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					margin:10px;
+					color:black;
+				}
+				.ptext{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:22px;
+				}
+				.footer-distributed{
+					width: auto;
+					background-color: #404040;
+					background-image: linear-gradient(rgb(255, 255, 255), rgb(64,64,64));
+					font-weight: lighter;
+					font-size:16px;
+				}
+				.footer-links{
+					text-shadow: 0 0 4px #ff9999;
+				}
+				.bordertext{
+					box-sizing: content-box;    
+					width: 90%;
+					height:80px;
+					padding: 10px; 					
+					border: 6px solid #ffcc66;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:20px;
+					text-align:center;
+				}
+				.videoWrapper {
+				  height:370px;
+				  width:650px;
+				  position:relative;
+				  overflow:hidden;
+				}
+
+				.videoWrapper iframe {
+					height:100%;
+					width:100%;
+					position:absolute;
+					top:0;
+					bottom:0;
+				}
+				
+		</style>
+		<script>
+			$(document).ready(function(){
+			  sizeTheVideo();
+			  $(window).resize(function(){
+				sizeTheVideo();
+			  });  
+			});
+
+			function sizeTheVideo(){
+			  // - 1.78 is the aspect ratio of the video
+			// - This will work if your video is 1920 x 1080
+			// - To find this value divide the video's native width by the height eg 1920/1080 = 1.78
+			  var aspectRatio =1.78;
+			  
+				var video = $('#videoWithJs iframe');
+				var videoHeight = video.outerHeight();
+				var newWidth = videoHeight*aspectRatio;
+					var halfNewWidth = newWidth/2;
+				
+			  //Define the new width and centrally align the iframe
+			  video.css({"width":newWidth+"px","left":"50%","margin-left":"-"+halfNewWidth+"px"});
+			}
+		</script>
+	</head>
+	<body>
+	<div class="page">
+		<div class = "header">
+			<center><img src="magictricks.jpeg"></center><br>
+		</div>
+		<hr>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="dropdown"><a class="dropdownbutton" data-toggle="dropdown" href="tricks.html" style="background-color:transparent;">TRICKS&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="pranks.html">PRANKS</a></li>
+				  <li><a href="magictricks.html">MAGIC TRICKS</a></li>
+				  <li><a href="partytricks.html">PARTY TRICKS</a></li>
+				</ul>
+			  </li>
+			  <li class="active"><a href="lifehacks.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFE HACKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="jokes.html">JOKES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="games.html">GAMES</a></li>
+			</ul>
+		  </div>
+		</nav>
+		<hr><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="h1text"><h1>V A N I S H I N G &nbsp;&nbsp;W A T E R</h1></div><br><br>
+					<img src="vanish.jpg" class="images"><br>
+					
+				</div>
+				<div class="col-md-6"><br>
+					<div class="text">
+						<p>In this science magic trick, you cause some water that you have poured into a cup to magically vanish, as if into thin air. Interestingly, this is a science magic trick that is 
+						based on a scientific principle that you don’t tell spectators about, as opposed to being a demonstration of a scientific concept that appears to be a magic trick.
+						<br><br>
+						In this effect, you pour some water into a cup and when you turn the cup over, no water pours out.
+						</p>
+					</div><br>
+					<p class="ptext" style="color:#680000">Materials needed: Sodium Polyacrylate, A non-see-through cup, A container (such as a glass cup to pour water into it)/ A faucet</p><br>
+					<p class="ptext">Preparing the Sodium Polyacrylate</p>
+					<div class="text">
+						<p>Before you present the trick and with no one looking, pour approximately one tablespoon of sodium polyacrylate into the bottom of the cup. You will probably want to experiment 
+						before performing the trick to test the amount of the compound as well as the volume of liquid that you can pour into the cup and will still effectively "vanish."
+						</p>
+					</div><br>
+				</div>
+		</div>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="bordertext" style="font-size:21px">
+						<br><i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-star-o" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTERMEDIATE
+					</div><br>
+					<p class="ptext">Performance Tip</p>
+					<div class="text">
+						<p>Be sure not to show the inside of the cup before and after the trick.
+						</p>
+					</div><br>
+					<p class="ptext">The Secret</p>
+					<div class="text">
+						<p>A compound that is known as sodium polyacrylate, which you can purchase at a hardware store, gardening store or nursery, and is sold in a form known as “moisture-saving pellets.” You can also obtain sodium polyacrylate from a disposable baby diaper. Simply 
+						tear open a diaper and remove and collect the moisture holding material within. With a quantity of sodium polyacrylate in hand, you will be able to perform the trick. 
+						</p>
+					</div><br>
+					<p class="ptext">The Science</p>
+					<div class="text">
+						<p>TSodium polyacrylate acts like a sponge and absorbs moisture. When mixed with water, the compound actually turns into a solid gel. And once the sodium 
+						polyacrylate forms a gel, the water is no longer liquid and can’t pour out.
+						<br><br>
+						Technically, the particles in sodium polyacrylate have a property known as being hygroscopic, which means that they absorb and hold water. Of course, 
+						this property is the reason why the compound is used in baby diapers to absorb moisture and keep babies dry and comfortable.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<p class="ptext">STEP ONE: Pour Water Into the Cup</p>
+					<div class="text">
+						<p>Pour about a quarter cup of water into the cup. In short time, the water will react with the compound and form a solid gel. At this point, 
+						you can just offer a bit of patter on how the "magic is working."
+						</p>
+					</div><br>
+					<p class="ptext">STEP TWO: The Big Reveal</p>
+					<div class="text">
+						<p>Simply turn the cup over and show that the water has apparently vanished.
+						</p>
+					</div><br>
+					<br><div id="videoWithJs" class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/1ok918vLoUU?rel=0&amp;showinfo=0&amp;start=172&&end=277" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+						</iframe>
+					</div><br><br>
+				</div>
+		</div>
+	</div>
+		<footer class="footer-distributed">
+			<center><div class="footer-left">
+				<b><p style="color: #1a1a1a;">NAVIGATE </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="index.html">Home</a>&nbsp;	     <b>·</b>&nbsp;
+					<a href="pranks.html">Pranks</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="magictricks.html">Magic Tricks</a>	&nbsp;      <b>·</b>&nbsp;
+					<a href="partytricks.html">Party Tricks</a>	  &nbsp;   <b>·</b>&nbsp;
+					<a href="lifehacks.html">Life Hacks</a>	   &nbsp;  <b>·</b>&nbsp;
+					<a href="jokes.html">Jokes</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="games.html">Games</a>
+				</p>
+				<b><p style="color: #1a1a1a;">ABOUT </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="about.html">About Us</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="help.html">Help Center</a>  &nbsp; 	<b>·</b>&nbsp;
+					<a href="terms.html">Terms of Use</a>&nbsp;	 <b>·</b>&nbsp;
+					<a href="privacy.html">Privacy Policy</a>&nbsp;	  <b>·</b>&nbsp;
+					<a href="mailto:trisupport@houseoftricks.org">Contact Us</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/jli1598"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">JESSICA</p></b>
+					<a href="https://github.com/ijeon0839"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">INHYE</p></b>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/aallen7131"><i class="fa fa-github"></i></a><b><p style="color: #1a1a1a;"> ASHLEY</p></b>
+					<a href="mailto:trisupport@houseoftricks.org"><i class="fa fa-envelope-square" style="font-size:39px"></i></a><b><p style="color: #1a1a1a;">trisupport@houseoftricks.org</p></b>
+				</div>
+			</div>
+			<br><br><br>
+			<hr color="#909090" width="600" size="2" align="center"><br>
+			<center><p class="footer-company-name">House of Tricks &copy; 2018</p></center>
+		</center></footer>
+	</body>
+</html>

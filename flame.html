@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<style>
+			.page {
+				max-width: 1450px;
+				margin: auto;
+				padding: 30px;
+			}
+				.header img{
+					width: 760px;
+					height: auto;
+				}
+				.navbar {
+				margin:0px auto;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 23px;
+				display: flex;
+				justify-content: space-around;
+				padding:px;
+				align-items: stretch;
+				text-align:justify;
+
+			}
+			.navbar a {
+				float: left;
+				color: black;
+				letter-spacing: 1.5px; 
+				display: inline-block;
+			}
+			.navbar a:hover{
+				color:#606060;
+			}
+			.navbar .active a:hover{
+				background-color: transparent;
+			}
+			.dropdown-menu {
+				float: left;
+				border: white;
+				outline: white;				
+				color: gray;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 19px;
+				box-shadow: 0px 5px 16px 0px rgb(128,128,128);
+				right:100px;
+				text-decoration: none;
+				text-align: left;
+				width:195px;
+				padding: 7px;
+				margin:2px;
+				font-weight: 350;
+				line-height: 30px;
+			}
+			.dropdown-menu li a:hover {
+				background-color: #ffc6c3;
+			}
+
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 4px solid #eeeeee;
+			}
+				.images{
+					width: 535px;
+				}
+				.text{
+					font-size:18px;
+					color:black;
+					font-family:Times New Roman;
+				}
+				.h1text{
+					font-size:28px;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					margin:10px;
+					color:black;
+				}
+				.ptext{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:22px;
+				}
+				.footer-distributed{
+					width: auto;
+					background-color: #404040;
+					background-image: linear-gradient(rgb(255, 255, 255), rgb(64,64,64));
+					font-weight: lighter;
+					font-size:16px;
+				}
+				.footer-links{
+					text-shadow: 0 0 4px #ff9999;
+				}
+				.bordertext{
+					box-sizing: content-box;    
+					width: 90%;
+					height:80px;
+					padding: 10px; 					
+					border: 6px solid #ffcc66;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:20px;
+					text-align:center;
+				}
+				.videoWrapper {
+				  height:370px;
+				  width:650px;
+				  position:relative;
+				  overflow:hidden;
+				}
+
+				.videoWrapper iframe {
+					height:100%;
+					width:100%;
+					position:absolute;
+					top:0;
+					bottom:0;
+				}
+				
+		</style>
+		<script>
+			$(document).ready(function(){
+			  sizeTheVideo();
+			  $(window).resize(function(){
+				sizeTheVideo();
+			  });  
+			});
+
+			function sizeTheVideo(){
+			  // - 1.78 is the aspect ratio of the video
+			// - This will work if your video is 1920 x 1080
+			// - To find this value divide the video's native width by the height eg 1920/1080 = 1.78
+			  var aspectRatio =1.78;
+			  
+				var video = $('#videoWithJs iframe');
+				var videoHeight = video.outerHeight();
+				var newWidth = videoHeight*aspectRatio;
+					var halfNewWidth = newWidth/2;
+				
+			  //Define the new width and centrally align the iframe
+			  video.css({"width":newWidth+"px","left":"50%","margin-left":"-"+halfNewWidth+"px"});
+			}
+		</script>
+	</head>
+	<body>
+	<div class="page">
+		<div class = "header">
+			<center><img src="partytricks.jpeg"></center><br>
+		</div>
+		<hr>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="dropdown"><a class="dropdownbutton" data-toggle="dropdown" href="tricks.html" style="background-color:transparent;">TRICKS&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="pranks.html">PRANKS</a></li>
+				  <li><a href="magictricks.html">MAGIC TRICKS</a></li>
+				  <li><a href="partytricks.html">PARTY TRICKS</a></li>
+				</ul>
+			  </li>
+			  <li class="active"><a href="lifehacks.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFE HACKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="jokes.html">JOKES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="games.html">GAMES</a></li>
+			</ul>
+		  </div>
+		</nav>
+		<hr><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="h1text"><h1>C A N D L E &nbsp;&nbsp;T R A V E L I N G&nbsp;&nbsp;<br><br>F L A M E</h1></div><br><br>
+					<img src="flame.jpg" class="images"><br>
+					<br><div class="bordertext" style="font-size:21px">
+						<br><i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-star-o" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTERMEDIATE
+					</div><br>
+				</div>
+				<div class="col-md-6"><br>
+					<div class="text">
+						<p>Relighting a candle using its smoke as a flame bridge looks like magic but it's real science.
+						<br><br>
+						You may think it’s impossible or that we have completely lost it, but we are going to show you a simple trick that will surprise 
+						anyone who sees it. You can relight a candle without touching the flame to the wick; only the smoke needs to be touched by the flame. It may seem ludicrous 
+						too you, but it really works and it’s easy, too.
+						</p>
+					</div><br>
+					<p class="ptext" style="color:#680000">Materials needed: A lighter (or matches), A candle, A candle holder (if your candle is not already in a container)</p><br>
+					<p class="ptext">STEP ONE: Find a Quiet Room</p>
+					<div class="text">
+						<p>It helps if the air in the room is very still and quiet before you light the candle.
+						</p>
+					</div><br>
+					<p class="ptext">STEP TWO: Blow the Candle and Light It Back!</p>
+					<div class="text">
+						<p>Blow out the candle with a short puff of air. Wait a couple of seconds for the smoke trail to rise from the wick of the candle.
+						<br><br>
+						Hold the lighter near the smoke trail coming from the wick and place the flame in the smoke. You can be close to the wick, but don’t let the flame 
+						touch the wick. It’s not necessary anyway! A blue flame travels along the trail to the wick and the candle glows once again.
+						</p>
+					</div>
+				</div>
+		</div><br>
+		<div class="row">
+				<div class="col-md-5">
+					<p class="ptext">How Does It Work?</p>
+					<div class="text">
+						<p>When you light a candle,  lot happens! Heat melts wax close to the wick and the melted wax flows up the wick by capillary action of the wick material. 
+						The wax is vaporized (becomes a hot gas) and its hydrocarbons break down into into hydrogen (H) and carbon (C). The now gaseous wax burns in oxygen (O) to 
+						produce water vapor, carbon dioxide, heat, and light. The “smoke” from a candle is a very complex material. You probably know it contains a substance called 
+						“soot” which is a black material composed mostly of carbon that comes from burning organic items. (You can see soot on surfaces near or over candles and at 
+						the top of glass coverings around them.) It’s interesting to note that the yellow flame you see on a candle is comprised mainly of burning soot. What you 
+						don’t see is the blue flame surrounding it in which the temperature can be around  2,500°F  (1400°C ).
+						<br><br>
+						Another component of the smoke from a candle is unburned wax vapor. This is the material that causes candle wax to appear white or gray. For a few seconds, its temperature is 
+						high enough that it will combust (burn) with the touch of a flame. It rises, of course, because it’s hot so you will probably need to be above the wick to light it. The smoke 
+						trail is very straight when they air is still and you can touch the flame to any part of the trail that’s connected to the wick. The wax vapor reignites and the blue flame 
+						travels along it to the wick where the candle burning process starts all over.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<br><div id="videoWithJs" class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/DSCjLR4TCgg?rel=0&amp;showinfo=0&amp;start=6&&end=46" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+		</div>
+	</div>
+		<footer class="footer-distributed">
+			<center><div class="footer-left">
+				<b><p style="color: #1a1a1a;">NAVIGATE </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="index.html">Home</a>&nbsp;	     <b>·</b>&nbsp;
+					<a href="pranks.html">Pranks</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="magictricks.html">Magic Tricks</a>	&nbsp;      <b>·</b>&nbsp;
+					<a href="partytricks.html">Party Tricks</a>	  &nbsp;   <b>·</b>&nbsp;
+					<a href="lifehacks.html">Life Hacks</a>	   &nbsp;  <b>·</b>&nbsp;
+					<a href="jokes.html">Jokes</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="games.html">Games</a>
+				</p>
+				<b><p style="color: #1a1a1a;">ABOUT </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="about.html">About Us</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="help.html">Help Center</a>  &nbsp; 	<b>·</b>&nbsp;
+					<a href="terms.html">Terms of Use</a>&nbsp;	 <b>·</b>&nbsp;
+					<a href="privacy.html">Privacy Policy</a>&nbsp;	  <b>·</b>&nbsp;
+					<a href="mailto:trisupport@houseoftricks.org">Contact Us</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/jli1598"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">JESSICA</p></b>
+					<a href="https://github.com/ijeon0839"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">INHYE</p></b>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/aallen7131"><i class="fa fa-github"></i></a><b><p style="color: #1a1a1a;"> ASHLEY</p></b>
+					<a href="mailto:trisupport@houseoftricks.org"><i class="fa fa-envelope-square" style="font-size:39px"></i></a><b><p style="color: #1a1a1a;">trisupport@houseoftricks.org</p></b>
+				</div>
+			</div>
+			<br><br><br>
+			<hr color="#909090" width="600" size="2" align="center"><br>
+			<center><p class="footer-company-name">House of Tricks &copy; 2018</p></center>
+		</center></footer>
+	</body>
+</html>

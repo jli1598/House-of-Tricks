@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+		
+		<style>
+			.page {
+				max-width: 1450px;
+				margin: auto;
+				padding: 30px;
+			}
+				.header img{
+					width: 760px;
+					height: auto;
+				}
+				.navbar {
+				margin:0px auto;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 23px;
+				display: flex;
+				justify-content: space-around;
+				padding:px;
+				align-items: stretch;
+				text-align:justify;
+
+			}
+			.navbar a {
+				float: left;
+				color: black;
+				letter-spacing: 1.5px; 
+				display: inline-block;
+			}
+			.navbar a:hover{
+				color:#606060;
+			}
+			.navbar .active a:hover{
+				background-color: transparent;
+			}
+			.dropdown-menu {
+				float: left;
+				border: white;
+				outline: white;				
+				color: gray;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 19px;
+				box-shadow: 0px 5px 16px 0px rgb(128,128,128);
+				right:100px;
+				text-decoration: none;
+				text-align: left;
+				width:195px;
+				padding: 7px;
+				margin:2px;
+				font-weight: 350;
+				line-height: 30px;
+			}
+			.dropdown-menu li a:hover {
+				background-color: #ffc6c3;
+			}
+
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 4px solid #eeeeee;
+			}
+				.images{
+					width: 535px;
+				}
+				.row{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-weight: lighter;
+				}
+				.text a{
+					text-decoration: none;
+					color: #666666;
+					font-weight: bold;
+				}
+				.text a:hover h1{
+					color: black;
+					font-weight: bold;
+				}
+				.footer-distributed{
+					width: auto;
+					background-color: #404040;
+					background-image: linear-gradient(rgb(255, 255, 255), rgb(64,64,64));
+					font-weight: lighter;
+					font-size:16px;
+				}
+				.footer-links{
+					text-shadow: 0 0 4px #ff9999;
+				}
+				input {
+					text-transform: uppercase;
+				}
+				.card{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					
+				}
+				.choices{
+					font-family: Times New Roman;
+					font-size:19px;
+					font-weight: bold;
+				}
+				.searchButton{
+					font-family: Times New Roman;
+					height:49px;
+					font-size: 18px;
+					font-weight: bold;
+				}
+				#searchButton{
+					font-family: Times New Roman;
+					height:65px;
+					font-size: 25px;
+					font-weight: bold;
+					border: 8px solid #ffcc66;
+					margin:15px;
+					padding:13px;
+					background-color: white;
+				}
+			
+
+		</style>
+		<script type = "text/template" id = "template">
+			<center><div class="card">
+				<h1>{{Question}}</h1><br>
+				<div class="choices">
+					<p>{{A}}</p>
+					<p>{{B}}</p>
+					<p>{{C}}</p>
+					<p>{{D}}</p><br>
+				</div>
+				<div class="searchButton">
+				<b><input type = "text" id="{{id}}" placeholder = " &nbsp;&nbsp;A n s w e r" size="50"></b>
+				</div></center>
+				<br><br>
+			</div>  
+			
+
+		</script>
+		<script>
+		var data;
+
+		function loadJSON(){
+		$.getJSON("https://quiz-f3b08.firebaseio.com/.json", function(results){
+			data = results; 
+			displayData();
+			}) 
+			
+		};
+
+		function displayData(){
+			var build = "";
+			var output = document.getElementById("output");
+			var template = document.getElementById("template").innerHTML;
+				for(var key in data.Quiz1){
+					build += Mustache.render(template, data.Quiz1[key]);
+				} 
+					
+				output.innerHTML = build;
+		}
+		
+		function grade(){
+			var ansKey;
+			var choice;
+			var ansCorrect = 0;
+			var ansWrong = 0;
+			for(var key in data.Quiz1){
+				choice = document.getElementById(key).value;
+				ansKey = data.Quiz1[key].Answer;
+				if(choice.indexOf(ansKey) != -1){
+					ansCorrect++;
+				}
+				if(choice.indexOf(ansKey) == -1){
+					ansWrong++;
+				}
+			}
+			var obj = {"video": {
+			  "value": "<br><br><br><br><center><video autoplay loop muted plays-inline><source src='balloons.mp4' type='video/mp4'></video></center>"
+			  }}
+			document.write('<span style=\"font-family:Franklin Gothic Medium, Franklin Gothic, ITC Franklin Gothic, Arial, sans-serif\"><center><br><br><img src="title.png"><br>'+ obj.video.value +'<br><p style="font-size:84px;" class="caps">T H E&nbsp;&nbsp; Q U I Z&nbsp;&nbsp; R E S U L T S</p><br><br><span style=\"border-top: 10px solid #ffcc66;font-size:35px;padding:45px;\">' + "T H E R E &nbsp;&nbsp;W A S &nbsp;&nbsp;A &nbsp;&nbsp;T O T A L &nbsp;&nbsp;O F &nbsp;&nbsp;9 &nbsp;&nbsp;Q U E S T I O N S&nbsp;&nbsp;"+ '</span>' + "<br><br><br><br><br>" +'<span style=\"font-size:35px;padding:45px;\">'+ansCorrect +  " &nbsp;&nbsp;Q U E S T I O N ( S ) &nbsp;&nbsp;C O R R E C T" + '</span>'+"<br><br><br><br><br>"+'<span style=\"border-bottom: 10px solid #ffcc66;font-size:35px;padding:45px;\">'+ansWrong  + " &nbsp;&nbsp;Q U E S T I O N ( S ) &nbsp;&nbsp;I N C O R R E C T<br>"+'</span></center></span>');
+			//alert("You got " + ansCorrect + " questions correct!");
+		}
+		</script>
+	</head>
+	<body>
+	<div class="page">
+		<div class = "header">
+			<center><img src="games.jpeg"></center><br>
+		</div>
+		<hr>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="dropdown"><a class="dropdownbutton" data-toggle="dropdown" href="tricks.html" style="background-color:transparent;">TRICKS&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="pranks.html">PRANKS</a></li>
+				  <li><a href="magictricks.html">MAGIC TRICKS</a></li>
+				  <li><a href="partytricks.html">PARTY TRICKS</a></li>
+				</ul>
+			  </li>
+			  <li class="active"><a href="lifehacks.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFE HACKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="jokes.html">JOKES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="games.html">GAMES</a></li>
+			</ul>
+		  </div>
+		</nav>
+		<hr><br>
+		<div class="row">
+				<div class="col-md-12">
+					<div class="text"><center><p style="font-size:43px;" class="caps">T H E&nbsp;&nbsp; Q U I Z</p><br>
+					</div>
+					<div class="text"><center><p style="font-size:18px;" class="caps">DIRECTIONS: Answer the questions according to the choices.
+					In order for your answer to count, ENTER YOUR CHOICE LETTER AND ITS FOLLOWING WORDS (Example: A) Water). Good luck and have fun!
+					Remember, it's just a game.</p><br>
+					</div>
+				</div>
+		</div>
+		<body onload="loadJSON()">
+			<div id="output">
+				<div class = "template">
+					<h1>{{Question}}</h1><br>	
+					<p>A){{A}}</p>
+					<p>B){{B}}</p>
+					<p>A){{C}}</p>
+					<p>D){{D}}</p><br>
+					<div class="searchButton">	
+					<b><input type = "text" id="{{id}}" placeholder = "Answer"></b><br><br>
+					</div>
+				</div> 
+			</div>
+			<center><button onclick="grade()" id="searchButton">S U B M I T</button></center>
+		</body>
+	
+	</body>
+	</div>
+		<footer class="footer-distributed">
+			<center><div class="footer-left">
+				<b><p style="color: #1a1a1a;">NAVIGATE </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="index.html">Home</a>&nbsp;	     <b>·</b>&nbsp;
+					<a href="pranks.html">Pranks</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="magictricks.html">Magic Tricks</a>	&nbsp;      <b>·</b>&nbsp;
+					<a href="partytricks.html">Party Tricks</a>	  &nbsp;   <b>·</b>&nbsp;
+					<a href="lifehacks.html">Life Hacks</a>	   &nbsp;  <b>·</b>&nbsp;
+					<a href="jokes.html">Jokes</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="games.html">Games</a>
+				</p>
+				<b><p style="color: #1a1a1a;">ABOUT </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="about.html">About Us</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="help.html">Help Center</a>  &nbsp; 	<b>·</b>&nbsp;
+					<a href="terms.html">Terms of Use</a>&nbsp;	 <b>·</b>&nbsp;
+					<a href="privacy.html">Privacy Policy</a>&nbsp;	  <b>·</b>&nbsp;
+					<a href="mailto:trisupport@houseoftricks.org">Contact Us</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/jli1598"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">JESSICA</p></b>
+					<a href="https://github.com/ijeon0839"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">INHYE</p></b>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/aallen7131"><i class="fa fa-github"></i></a><b><p style="color: #1a1a1a;"> ASHLEY</p></b>
+					<a href="mailto:trisupport@houseoftricks.org"><i class="fa fa-envelope-square" style="font-size:39px"></i></a><b><p style="color: #1a1a1a;">trisupport@houseoftricks.org</p></b>
+				</div>
+			</div>
+			<br><br><br>
+			<hr color="#909090" width="600" size="2" align="center"><br>
+			<center><p class="footer-company-name">House of Tricks &copy; 2018</p></center>
+		</center></footer>
+	</body>
+</html>

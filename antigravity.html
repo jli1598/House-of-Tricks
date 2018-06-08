@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<style>
+			.page {
+				max-width: 1450px;
+				margin: auto;
+				padding: 30px;
+			}
+				.header img{
+					width: 760px;
+					height: auto;
+				}
+				.navbar {
+				margin:0px auto;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 23px;
+				display: flex;
+				justify-content: space-around;
+				padding:px;
+				align-items: stretch;
+				text-align:justify;
+
+			}
+			.navbar a {
+				float: left;
+				color: black;
+				letter-spacing: 1.5px; 
+				display: inline-block;
+			}
+			.navbar a:hover{
+				color:#606060;
+			}
+			.navbar .active a:hover{
+				background-color: transparent;
+			}
+			.dropdown-menu {
+				float: left;
+				border: white;
+				outline: white;				
+				color: gray;
+				font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+				font-size: 19px;
+				box-shadow: 0px 5px 16px 0px rgb(128,128,128);
+				right:100px;
+				text-decoration: none;
+				text-align: left;
+				width:195px;
+				padding: 7px;
+				margin:2px;
+				font-weight: 350;
+				line-height: 30px;
+			}
+			.dropdown-menu li a:hover {
+				background-color: #ffc6c3;
+			}
+
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			hr {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border: 0;
+				border-top: 4px solid #eeeeee;
+			}
+				.images{
+					width: 535px;
+				}
+				.text{
+					font-size:18px;
+					color:black;
+					font-family:Times New Roman;
+				}
+				.h1text{
+					font-size:28px;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					margin:10px;
+					color:black;
+				}
+				.ptext{
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:22px;
+				}
+				.footer-distributed{
+					width: auto;
+					background-color: #404040;
+					background-image: linear-gradient(rgb(255, 255, 255), rgb(64,64,64));
+					font-weight: lighter;
+					font-size:16px;
+				}
+				.footer-links{
+					text-shadow: 0 0 4px #ff9999;
+				}
+				.bordertext{
+					box-sizing: content-box;    
+					width: 90%;
+					height:80px;
+					padding: 10px; 					
+					border: 6px solid #ffcc66;
+					font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+					font-size:20px;
+					text-align:center;
+				}
+				.videoWrapper {
+				  height:370px;
+				  width:650px;
+				  position:relative;
+				  overflow:hidden;
+				}
+
+				.videoWrapper iframe {
+					height:100%;
+					width:100%;
+					position:absolute;
+					top:0;
+					bottom:0;
+				}
+				
+		</style>
+		<script>
+			$(document).ready(function(){
+			  sizeTheVideo();
+			  $(window).resize(function(){
+				sizeTheVideo();
+			  });  
+			});
+
+			function sizeTheVideo(){
+			  // - 1.78 is the aspect ratio of the video
+			// - This will work if your video is 1920 x 1080
+			// - To find this value divide the video's native width by the height eg 1920/1080 = 1.78
+			  var aspectRatio =1.78;
+			  
+				var video = $('#videoWithJs iframe');
+				var videoHeight = video.outerHeight();
+				var newWidth = videoHeight*aspectRatio;
+					var halfNewWidth = newWidth/2;
+				
+			  //Define the new width and centrally align the iframe
+			  video.css({"width":newWidth+"px","left":"50%","margin-left":"-"+halfNewWidth+"px"});
+			}
+		</script>
+	</head>
+	<body>
+	<div class="page">
+		<div class = "header">
+			<center><img src="magictricks.jpeg"></center><br>
+		</div>
+		<hr>
+		<nav class="navbar">
+		  <div class="container-fluid">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="index.html">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="dropdown"><a class="dropdownbutton" data-toggle="dropdown" href="tricks.html" style="background-color:transparent;">TRICKS&nbsp;<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				  <li><a href="pranks.html">PRANKS</a></li>
+				  <li><a href="magictricks.html">MAGIC TRICKS</a></li>
+				  <li><a href="partytricks.html">PARTY TRICKS</a></li>
+				</ul>
+			  </li>
+			  <li class="active"><a href="lifehacks.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIFE HACKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="jokes.html">JOKES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			  <li class="active"><a href="games.html">GAMES</a></li>
+			</ul>
+		  </div>
+		</nav>
+		<hr><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="h1text"><h1>A N T I - G R A V I T Y &nbsp;&nbsp;R I N G&nbsp;&nbsp;<br><br>T R I C K</h1></div><br><br>
+					<img src="ring.jpg" class="images"><br>
+					
+				</div>
+				<div class="col-md-6"><br>
+					<div class="text">
+						<p>
+						This physics illusion trick is relatively easy to perform, yet it's deceptive and eye-catching. You can be "The Lord of the Ring" and amaze 
+						onlookers by appearing to defy the force of gravity right in front of their eyes!  This instructable will explain and show specifically how to pull it off. 
+						</p>
+					</div><br>
+					<p class="ptext" style="color:#680000">Materials needed: A rubberband, A ring (the heavier the better), Scissors</p><br>
+					<p class="ptext">STEP ONE: Preparation</p>
+					<div class="text">
+						<p>First, cut a rubber band wih a pair of scissors. Then, "thread" the rubber band through the ring until the ring is around the halfway point of the length of the rubber band.
+						</p>
+					</div><br>
+					<p class="ptext">STEP TWO: Creating the Effect</p>
+					<div class="text">
+						<p>Grab the rubber band between the thumbs and first fingers of both of your hands as shown in the picture. The ring will be resting on the rubber band between your hands.
+						</p>
+					</div>
+				</div>
+		</div><br>
+		<div class="row">
+				<div class="col-md-5">
+					<div class="bordertext" style="font-size:21px">
+						<br><i class="fa fa-star" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-star-o" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;
+						<i class="fa fa-star-o" style="font-size:35px;color: #ff4d4d"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BEGINNER
+					</div><br>
+					<p class="ptext">STEP THREE: Performing the Illusion</p>
+					<div class="text">
+						<p>Now, pull the rubber band tight so that it appears to others to be longer than it actually is. Obviously you will want to have onlookers watch this illusion from the right 
+						vantage point (make sure they are facing you). 
+						There will now be a considerable length of excess rubber band concealed within both of your fists. You will need to practice the technique of hiding it.
+						<br><br>
+						Tilt the rubber band at about a 45-degree angle so that the ring slides down against the thumb and first finger of your left hand. Ever-so-slightly release 
+						some of your grip of the rubber band with that hand. This will take just a little bit of practice, but if you keep the angle right and release the rubber band 
+						at a constant, slow rate, the ring will "stick" to the rubber band and travel upwards towards your right hand.
+						<br><br>
+						Friction force helps it to stay put and not slide back down. Keep your hands and fingers as still as possible! Continue to release your grip until you "run out" 
+						of rubber band on that side. By that point, the ring should be at least halfway up to your right hand. To an unsuspecting observer from the other side, it will look 
+						like the rubber band never moved but the ring magically defied gravity and traveled upwards. Repeat the same process with your right hand (tilting the rubber band 
+						the opposite way).  You are now The Lord of the Ring!
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<br><div id="videoWithJs" class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/UoyPYkQpOeo?rel=0&amp;showinfo=0&amp;start=15&&end=23" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+		</div>
+	</div>
+		<footer class="footer-distributed">
+			<center><div class="footer-left">
+				<b><p style="color: #1a1a1a;">NAVIGATE </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="index.html">Home</a>&nbsp;	     <b>·</b>&nbsp;
+					<a href="pranks.html">Pranks</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="magictricks.html">Magic Tricks</a>	&nbsp;      <b>·</b>&nbsp;
+					<a href="partytricks.html">Party Tricks</a>	  &nbsp;   <b>·</b>&nbsp;
+					<a href="lifehacks.html">Life Hacks</a>	   &nbsp;  <b>·</b>&nbsp;
+					<a href="jokes.html">Jokes</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="games.html">Games</a>
+				</p>
+				<b><p style="color: #1a1a1a;">ABOUT </p></b>
+				<p class="footer-links" style="color: #333333;">
+					<a href="about.html">About Us</a>	&nbsp;    <b>·</b>&nbsp;
+					<a href="help.html">Help Center</a>  &nbsp; 	<b>·</b>&nbsp;
+					<a href="terms.html">Terms of Use</a>&nbsp;	 <b>·</b>&nbsp;
+					<a href="privacy.html">Privacy Policy</a>&nbsp;	  <b>·</b>&nbsp;
+					<a href="mailto:trisupport@houseoftricks.org">Contact Us</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/jli1598"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">JESSICA</p></b>
+					<a href="https://github.com/ijeon0839"><i class="fa fa-github"></i></a> <b><p style="color: #1a1a1a;">INHYE</p></b>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-icons">
+					<a href="https://github.com/aallen7131"><i class="fa fa-github"></i></a><b><p style="color: #1a1a1a;"> ASHLEY</p></b>
+					<a href="mailto:trisupport@houseoftricks.org"><i class="fa fa-envelope-square" style="font-size:39px"></i></a><b><p style="color: #1a1a1a;">trisupport@houseoftricks.org</p></b>
+				</div>
+			</div>
+			<br><br><br>
+			<hr color="#909090" width="600" size="2" align="center"><br>
+			<center><p class="footer-company-name">House of Tricks &copy; 2018</p></center>
+		</center></footer>
+	</body>
+</html>
